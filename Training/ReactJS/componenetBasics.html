@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    <script type="text/jsx">
+
+        //1. Step 1 : Create a Component
+        //2. Step 2: Instantiate a Component
+        //3. Component is of 2 types: Functional Component and Class Component
+    
+        class BasicComponent extends React.Component{
+            render(){   
+                //return React.createElement('h1',{},'Basic Component !');
+                // OR
+                return <h1> Hello JSX in Component </h1>    
+
+                // Here h1 is working as a root element. we cannot have multiple root elements.
+                // Hence we cannot define any html element same level of H1
+            }
+        }
+
+        //let componentInstance = React.createElement(BasicComponent);
+        // OR below is the JSX way to instantiate to component
+        let componentInstance = <BasicComponent />
+        ReactDOM.render(componentInstance,document.getElementById('content'));     
+
+        //Why are we using components?
+        //1. They are reusable.
+        //2. They are composable
+        //3. They are maintainable
+        //4. They are configurable.
+    
+   
+   
+    </script>
+
+    
+
+</body>
+</html>

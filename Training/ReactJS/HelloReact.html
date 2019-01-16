@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>        
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    <script>
+        //React.createElement('element',any attributes,children);
+        let h1element = React.createElement('h1',{id:'header'},"Hello React !");
+        let pelement = React.createElement('p',{id:'mypara'},"Simple Para !");
+        let fragment = [h1element,pelement];
+        let sectionElement = React.createElement('section',{id:'mysection'},fragment);
+        ReactDOM.render(sectionElement,document.getElementById('content'));
+
+        /*************************************************************************************************
+         * JSX allows you to write HTML and HTML like syntax. This is optional.
+         * SO that I dont need to visualize HTML in API format.
+         * JSX to write HTML like syntax and convert it to React API. This is what react transformer does.
+         * ************************************************************************************************/
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

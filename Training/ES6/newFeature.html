@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    if(true){
+        var x1 = 20;
+        let x2 = 100;
+    }
+
+    console.log(x1);
+    //console.log(x2);
+
+    const PI = 3.14;
+    // PI = 3.14645;
+
+
+    //Spread Opearator
+    //1. Arrays
+
+var cars1 = ["BMW","Audi","Ferrari"];
+var cars2 = ['Swift','i10','Baleno'];
+
+//dot dot dot (...) is a spread operator which read all element of array
+//Copy by the value -- That is called deep copying
+var allCars = [...cars1,...cars2];
+//dot dot dot (...) is a spread operator which read all array. Means array of an array
+//copy by refrence
+var allCars = [cars1,cars2];
+
+//spread operator work with the object as well
+var person = {name:'sachin',cit:'mumbai'};
+var player = {...person,runs:200000};
+
+console.log(player);
+
+
+//for
+//for-in --> This was in javascript. This will give you indexes of the elements not the values of the array
+//for-of --> This is ES6. This will give you the elemnets of the array
+console.log("============for-in=============");
+for(let car in allCars){
+    console.log(car);
+}
+console.log("============for-of=============");
+for(let car of allCars){
+    console.log(car);
+}
+
+//Functions and their their Parameters
+function Square(x){
+    return x*x;
+}
+//Function as an Expression
+var Square = function(x){
+    return x*x;
+}
+console.log(Square(20));
+
+
+//Arrow Functions
+var Square1 = (x) => {
+    return x*x;
+}
+
+var Square2 = x => x*x;
+
+var Square3 = x => {
+    let a =10;
+    let b =20;
+    return x+a+b;
+}
+console.log("=====functions=====");
+console.log(Square1(20));
+console.log(Square2(20));
+console.log(Square3(20));
+
+console.log("======foreach=======");
+allCars.forEach(function(car){
+    console.log(car);
+});
+allCars.forEach(punit=>console.log(punit))
+
+console.log("======Parameters - JavaScript=======");
+function printBooks(author,title){
+    author = author || 'Dr. APJ Abdul Kalam';
+    title = title || 'Wings of Fire';
+    console.log(author,title);
+}
+printBooks();
+
+
+console.log("========Parameters - ES6 - Default Parameters========");
+function printBooks(author = 'Dr. APJ Abdul Kalam',title = 'Wings of Fire'){
+    console.log(author,title);
+}
+printBooks();
+printBooks('Sachin Tendulkar','Playing it My Way');
+
+console.log("=========rest Parameters (bache hue parameters na ki REST service)===========")
+//use variable number of arguments. Means accept too many arguments
+
+function PrintbooksByTitle(author,...titles){//second paramters should be n number of titles. I dont want to use Array
+//when we use spread operator in a defination of a function becomes REST Arguments
+    console.log(author,titles);
+}
+//Please note we cannot have multiple REST Parameters
+PrintbooksByTitle("Punit","Java5","Java8","JSF","Spring","Angular","React");
+PrintbooksByTitle("Punit","Java");
+
+//Class=========================================================================================================
+class Car{
+    constructor(name="i10",speed=200){
+        this.name=name;
+        this.speed=speed;
+    }
+    //we cannot have multiple constructor. it will throw an error: A class may not have more than one constructor
+
+    //No need to use 'function' keyword when defining any method inside a class.
+    Accelearate(){
+        console.log("Gadi bhagi!!!!!");
+        console.log(this.name + " is running at "+this.speed + " kmph!!!!!!!!!");
+        //Here we are breaking the string. but ES6 provides "string literal" which will help us.
+        console.log(`${this.name} is running at ${this.speed} kmph!`);
+        //Here we need not to break the string every time.  
+        //This will help us in multiline string as well.
+        let multilineString = `Punit adad ada hadhad ada
+        adad adadjad addjadj adayuncnanc 
+        adajkdandaldaldla
+        adakljaldjaldjajd \n dahdkahkh \n\r adahkdhak`;
+
+        console.log(multilineString);
+    }
+}
+
+let carobj = new Car();
+//carobj.Accelearate();
+
+carobj.speed = 300;
+carobj.name = 'i20';
+//carobj.Accelearate();
+
+//let carobj2 = new Car("Maruti 800",50).Accelearate();
+//ES6 does not call super constructor implicitly. we need to make that call in the child class constructor.
+//Otherwise it will give an error
+class JamesBondCar extends Car{
+    constructor(){
+        super();
+        this.canBeInvisible = true;
+    }
+}
+
+let jbc = new JamesBondCar();
+
+class JamesBondCar2 extends Car{
+    constructor(name,speed,invisible=true){
+        super(name,speed);
+        this.canBeInvisible = true;
+    }
+    Accelearate(){
+        console.log(`can it be invisible ? : ${this.canBeInvisible}`);
+    }
+}
+
+let jbc2 = new JamesBondCar2();
+jbc2.Accelearate();
+
+let jbc22 = new JamesBondCar2().Accelearate();
+/*==============================================================================================================
+React alone is not MVC. This is developed by facebook
+Redux + React can give you MVC
+Angular is MVC 
+-------------------------------------------------------------------
+React is unidirectional and Angular is Bidirectioanl Language
+-------------------------------------------------------------------
+React , HTML5, CSS3, Angular => Gives you single page application. Means single page experience for user.
+Developer may have many pages at backend
+-------------------------------------------------------------------
+Enahncement - ReachJS (Performance as an issue). Develop from scratch - Angular. Because react uses virtual DOM
+-------------------------------------------------------------------
+React - we never use DOM API Directly to manipulate the DOM, React is gonna do for us
+React - can relace Jquery (Jquery - Manipulate DOM in its own way).
+updating the DOM is the costliest opearation to do. So do it in a better way and let react do it on your behalf.
+--------------------------------------------------------------------
+
+================================================================================================================   */
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

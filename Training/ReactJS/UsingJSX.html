@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    //JSX = Java Script Extension
+    <script type="text/jsx">
+
+        let sectionElement = <section>
+                                <h1>Hello JSX !</h1>
+                                <p> Para Using JSX</p>
+                                {/* <p> Para Using JSX</p> This is the way to comments in JSX  */}
+                            </section>   
+
+        ReactDOM.render(sectionElement,document.getElementById('content'));     
+    </script>
+</body>
+</html>
