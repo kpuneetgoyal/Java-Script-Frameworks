@@ -14,31 +14,34 @@
 <body>
     <div id="content"></div>
     <script type="text/jsx">
-            Class PostComponent extends React.Component{
+            class PostComponent extends React.Component{
 
                 constructor(props){
                     super(props);
-                    this.state={allPosts:[]}        
+                    this.state={allPosts:[]};        
+                }
+            
+
+                componentDidMount(){
+                    let thePromise=axios.get('https://jsonplaceholder.typicode.com/posts');
+                    thePromise.then(
+                        (response) => {this.setState({allPosts:response.data})},
+                        (err) => {console.log(err)}
+                    )
+                }
+
+                render(){
+                    let datatoBeDisplayed = this.state.allPosts.map(c=><li key={c.id}>{c.title}</li>);
+                    return <div>
+                            <h1>All Posts !</h1>
+                            <ul>
+                                {datatoBeDisplayed}
+                            </ul>
+                        </div>    
                 }
             }
 
-            componentDidMound(){
-                let thePromise=axios.get('http://jsonplaceholder.typicode.com/posts');
-                thePromise.then(
-                    (response)=>{this.setState({allPosts:response.data})},
-                    (err)=>{cosole.log(err)}
-                )
-            }
-
-            render(){
-                let datatoBeDisplayed = this.state.allPosts.map(c=><li key={c.id}>{c.title}</li>)
-                return <div><h1>All Posts</h1></div>
-                    <ul>{datatoBeDisplayed}</ul>
-            </div>    
-            }
-        }
-
-        ReactDom.render(<PostComponent>,document.getElementById('content'));
+        ReactDOM.render(<PostComponent />,document.getElementById("content"));
     </script>
 </body>
 </html>

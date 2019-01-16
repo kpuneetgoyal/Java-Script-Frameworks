@@ -24,9 +24,13 @@ export class ButtonComponentList extends React.Component {
         ]};
     }
 
-    //whenever we call setstate  render gets called
-    //This method should return a value. Other methods of lifecycle may not return any value
-    //setstate() -> shouldComponentUpdate() -> render()
+    /*******************************************************************************************
+     * whenever we call setstate  render gets called
+     * This method should return a value. Other methods of lifecycle may not return any value.
+     * This will return true / false. 
+     * if you return false. your UI will not update.
+     * setstate() -> shouldComponentUpdate() -> render()
+     *********************************************************************************************/
     shouldComponentUpdate(){
 
     }
