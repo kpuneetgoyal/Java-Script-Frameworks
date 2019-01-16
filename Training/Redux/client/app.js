@@ -8,6 +8,7 @@ import Main from './components/main.component';
 import Users from './components/users.component';
 import UserDetails from './components/userdetails.component';
 import store from './store/store';
+import app from './components/connect';
 
 var root1 = <Main>
     <Users />
@@ -29,7 +30,7 @@ var root1 = <Main>
 */
 var router = <Provider store={store}>
                 <Router history={browserHistory}>
-                    <Route path="/" component={Main}>
+                    <Route path="/" component={app}>
                         <IndexRoute component={Users}></IndexRoute>
                         <Route path="/userdetails" component={UserDetails}></Route>    
                     </Route>
@@ -44,7 +45,7 @@ var router = <Provider store={store}>
 
  /*****************************************************************************************
   * whenevr any action is dispatched (custom or defeault) , every reducer will get notified
-  * 
+  * But we dont want to notify them all, these should be action based.
   *****************************************************************************************/
 
 var root2 = <Main>
