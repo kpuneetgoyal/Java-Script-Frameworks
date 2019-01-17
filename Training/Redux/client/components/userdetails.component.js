@@ -11,6 +11,7 @@ export default class UserDetails extends Component{
         //return <h2> User Details !!!! </h2>
         let userIdPassed = this.props.params.id;
         let currentUser = this.props.allUsers.find(user => user.id == userIdPassed);
+        let index = this.props.allUsers.findIndex(user => user.id == userIdPassed);
         
         return <div className="container">   
                     <h2> Users Details are !!!!</h2>
