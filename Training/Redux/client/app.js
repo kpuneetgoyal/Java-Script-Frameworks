@@ -32,7 +32,7 @@ var router = <Provider store={store}>
                 <Router history={browserHistory}>
                     <Route path="/" component={app}>
                         <IndexRoute component={Users}></IndexRoute>
-                        <Route path="/userdetails" component={UserDetails}></Route>    
+                        <Route path="/userdetails/:id" component={UserDetails}></Route>    
                     </Route>
                 </Router>
         </Provider>    
