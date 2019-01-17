@@ -1,6 +1,7 @@
-export function IncrementFollowers(){   //   <----- This is action creator
+export function IncrementFollowers(index){   //   <----- This is action creator
     return {                            //////////////////////////////////
-        type : 'INCREMENT_FOLLOWERS'    //    <----  Actions
+        type : 'INCREMENT_FOLLOWERS',
+        index: index    //    <----  Actions
     }                                   /////////////////////////////////
 }
 
