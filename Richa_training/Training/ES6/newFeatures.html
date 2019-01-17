@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    {
+
+var x=100;
+console.log(x);
+let y=200;
+console.log(y);
+var x=300;
+console.log(x);
+
+const Ferrari="FERRARI"
+var cars=['BMW','AUDI',Ferrari];
+var moreCars=['TATA',"MAHINDRA",'MARUTI'];
+
+var allcars=[...cars,...moreCars];
+var allcars1=[...cars,moreCars];
+var allcars2=[cars,moreCars];
+// console.log(allcars);
+// console.log(allcars1);
+// console.log(allcars2);
+
+allcars.forEach(function(car){
+    //console.log(car);
+});
+
+//allcars.forEach(car=> console.log(car));
+allcars.forEach(function(car){
+    //console.log(car);
+});
+
+for(let car in allcars){
+    //console.log(car);
+}
+
+for(let car of allcars){
+    //console.log(car);
+}
+
+
+
+}
+
+function square(x){
+    return x*x;
+}
+
+var squareValue=function(x){
+    return x*x;
+}
+
+//console.log(square(100)+" : "+squareValue(200));
+
+var square1 = (x) =>{
+    return x*x;
+}
+
+var square2=x=>x*x;
+//console.log(square1(100)+" : "+square2(200));
+
+
+
+// let printBook=function(author,book){
+//     author = author || "Dr. APJ abdul kalam";
+//     book = book || "Wings of fire";
+// }
+
+let printBook1=function(author="Dr. APJ abdul kalam",book="Wings of fire"){
+    //console.log(author,book);
+}
+
+//console.log(printBook1("Sachin Tendulkar","Playing it with me."));
+
+function printBooksByTitle(author,...titles){
+    //console.log(author,titles);
+}
+ printBooksByTitle("abc","def")
+ printBooksByTitle("abc","def","dasda","fdff")
+
+ //class
+
+ class Car{
+     constructor(name="i20",speed=200){
+           this.name= name;
+           this.speed = speed;
+     }
+
+     Acclerate(){
+         //console.log("VROOOOOOMMM...");
+         //console.log(this.name+" is running at "+this.speed+" KMPH.");
+         //console.log(`${this.name} is running at ${this.speed} KMPH.`);
+         return `${this.name} is running at ${this.speed} KMPH.`;
+     }
+ }
+var carObj= new Car();
+//console.log(carObj.name);
+//carObj.Acclerate();
+let carObj1= new Car("i10",100);
+let carObj2= new Car("BMW",500);
+//console.log(carObj2.name+" : "+carObj2.speed);
+carObj2.Acclerate();
+
+class JamesBondCar extends Car{
+    constructor(name,speed,invisible=false){
+        super(name,speed);
+        this.canBeInvisible = invisible;
+    }
+
+    invisibleFeature(){
+        console.log(`${this.canBeInvisible}`);
+    }
+
+    Acclerate(){
+      // console.log(super.Acclerate + ` can be Invisible ? : ${this.canBeInvisible}`);
+      // return super.Acclerate + ` can be Invisible ? : ${this.canBeInvisible}`;
+
+      return super.Acclerate() + " can be Invisible ? : "+ this.canBeInvisible;
+    }
+}
+ var jbc = new JamesBondCar("JAMES BOND",500,true);
+ //jbc.invisibleFeature();
+ console.log(jbc.Acclerate());
+    </script>
+
+#################################################################################################
+    //react do the same as the javascript but react does'nt allow user to modification in DOM.
+    //it interanlly uses javascript by its own way.
+    //In react developers user is not allowed  to change in DOM.
+    //In react developers work on virtual Dome and react merge that virtual DOM into actual DOM.
+
+</head>
+<body>
+   
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+    
+</head>
+<body>
+    <div id="content">
+
+    </div>
+
+    <script type="text/jsx">
+// 1.create a component 
+//  2. instantiate a 
+
+         class HeaderComponent extends React.Component{
+             render(){
+                
+                return <h1>{this.props.message}</h1>
+             }
+         }
+
+         class CommentComponent extends React.Component{
+            render(){
+               
+               return <ul>
+                   <li> JSX is simple</li>
+                   <li> React is interesting</li>
+                   <li> Componens and Elements</li>
+               </ul>
+            }
+        }
+
+
+         class BlogComponent extends React.Component{
+             render(){
+                 return <div><HeaderComponent message="Learning React JS" message1="Hello React"/>
+                         <CommentComponent/>
+                 </div>
+             }
+         }
+         
+        
+         ReactDOM.render(<BlogComponent/>,document.getElementById('content'));
+
+         
+    
+        </script>
+</body>
+</html>

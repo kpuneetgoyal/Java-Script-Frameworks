@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+    
+</head>
+<body>
+    <div id="content">
+
+    </div>
+
+    <script>
+
+
+            //React createElement('element,anyAttributes,children)
+          let h1Element= React.createElement("h1",{id:'header'},"Hello React !");
+         var divElement= React.createElement("div",{id:'welcome'},"welcome to react tutorial!",h1Element);
+         var p1Element = React.createElement("p",{id:'Para1'},"Simple Para");
+         //var fragment = [pElement,p1Element];
+
+         var sectionElement = React.createElement("section",{id:"mysection"},[divElement,p1Element])
+         //var sectionElement = React.createElement("section",{},[pElement,p1Element]);
+         ReactDOM.render(sectionElement,document.getElementById('content'));
+
+         //JSX allows us write HTML elemnts
+         
+    
+        </script>
+</body>
+</html>

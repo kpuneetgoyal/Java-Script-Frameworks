@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+    
+</head>
+<body>
+    <div id="content">
+
+    </div>
+
+    <script type="text/jsx">
+
+
+       
+        
+         class CourseComponent extends React.Component{
+             render(){
+                 return <h1>{this.props.message}</h1>
+             }
+         }
+
+         class ListOfCourseComponent extends React.Component{
+           
+          constructor(){
+              super();
+            this.courseList=['javascript','jquery','react','angular'];
+          }
+
+          render(){
+           var coursesToBeCreated = this.courseList.map(c=> <CourseComponent message={c} />)
+               
+            return <div>
+                    {coursesToBeCreated}
+                   </div>
+            }
+        }
+
+        
+
+
+         
+         
+        //ReactDOM.render(<BlogComponent/>,document.getElementById('content'));
+         ReactDOM.render(<ListOfCourseComponent/>,document.getElementById('content'));
+         
+
+         
+         
+    
+        </script>
+
+        
+
+        
+</body>
+</html>
