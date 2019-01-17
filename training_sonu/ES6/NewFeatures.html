@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    let cars=["BMW","Audi"];
+    let moreCars=["TATA","Maruti"];
+    let allCars=[...cars,...moreCars];
+    console.log(allCars);
+      
+    function square(x){
+        return x*x;
+    }
+    var square =function(x){
+        return x*x;
+    }
+
+    var square =(x)=>{
+        return x*x;
+    };
+    console.log(square(3))
+    allCars.forEach(c=>console.log(c));
+
+    function books(author,...title){
+        console.log(author,title);
+    }
+    books("abc","sonu","dsfs");
+
+    class car{
+
+        constructor(name){
+            this.name=name;
+        }
+        jamescarfun(){
+            return `my ${this.name}`;
+        }
+    }
+    class jamescar extends car{
+
+        constructor(name){
+            super(name);
+            this.name=name;
+        }
+        jamecarfun(){
+           return super.jamescarfun()+" is my car"
+        }
+    }
+    var carobj=new jamescar("audi");
+    carobj.jamescarfun();
+    </script>
+</head>
+<body>  
+</body>
+</html>

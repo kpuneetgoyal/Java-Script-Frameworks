@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
+</head>
+<body>
+<div id="content"></div>
+ <script type="text/jsx">
+     class PostComponent extends React.Component{
+
+        constructor(props){
+            super(props);
+            this.state={allPosts:[]};
+        }
+
+        componentDidMount(){
+            let thePromisse=axios.get('https://jsonplaceholder.typicode.com/posts');
+            thePromisse.then(
+                (response)=>{this.setState({allPosts:response.data})},
+                (err)=>{console.log(err)}
+            )
+        }
+
+         render(){
+             let dataTobeDisplayed=this.state.allPosts.map(c=><li key={c.id}>{c.title}</li>)
+             return <div><h1>All Post</h1>
+                <ul>{dataTobeDisplayed}</ul>
+            </div>
+         }
+     }
+ 
+
+     ReactDOM.render(<PostComponent/>,document.getElementById("content"));
+ </script>   
+</body>
+</html>

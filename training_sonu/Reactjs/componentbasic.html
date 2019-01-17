@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+</head>
+<body>
+        <div id="content"></div>
+    <script type="text/jsx">
+class HeaderComponent extends React.Component{
+        render(){
+        return    <h1>header</h1>
+        }
+    }        
+
+    class CommentComponent extends React.Component{
+        render(){
+          return  <ul><li>jsx is simple</li><li>React is interesting</li></ul>
+        }
+    }        
+
+    class BlogComponent extends React.Component{
+        render(){
+           return  <div>
+                <HeaderComponent/>
+                <CommentComponent/>
+            </div>
+        }
+    }        
+
+
+    ReactDOM.render(<BlogComponent/>,document.getElementById('content'))
+    </script>
+</body>
+</html>
