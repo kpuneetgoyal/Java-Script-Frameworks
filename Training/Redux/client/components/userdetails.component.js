@@ -16,7 +16,7 @@ export default class UserDetails extends Component{
         return <div className="container">   
                     <h2> Users Details are !!!!</h2>
                     <ul> {currentUser.login} </ul>
-                    <ul> {currentUser.followers} </ul>
+                    <ul> <button onClick={this.props.IncrementFollowers.bind(this,index)}> {currentUser.followers} </button></ul>
                     <ul> {currentUser.node_id} </ul>
                     <ul> {currentUser.avatar_url} </ul>
                     <ul> {currentUser.events_url} </ul>

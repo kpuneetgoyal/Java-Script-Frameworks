@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 export default class UserThumbnailComponent extends React.Component{
     render(){
         console.log(this.props.allUsers)
-        return <table border="2"><tr>
+        return <table><tr>
             <td><Link to={"/userdetails/"+this.props.userdetails.id}>
                     {this.props.userdetails.login}
                 </Link>
