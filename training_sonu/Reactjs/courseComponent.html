@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
+</head>
+<body>
+<div id="content"></div>
+ <script type="text/jsx">
+     class CourseComponent extends React.Component{
+
+        constructor(props){
+            super(props);
+        }
+         render(){
+             return <li ref="courseIndex" key={this.props.coursedetails.id}>{this.props.coursedetails.courseName} {this.props.coursedetails.price}<i onClick={()=>this.props.LinkToParentDeleteHandler(this.props.coursedetails.id)} className="glyphicon glyphicon-trash"></i></li>
+         }
+     }
+ 
+     class ListOfCourse extends React.Component{
+
+        constructor(){
+            super();
+            this.state={list:[{id:1,courseName:"Java",price:"200"},{id:2,courseName:"React",price:"400"},{id:3,courseName:"Angular",price:"600"}]}
+        }
+
+        ParentDeleteHandler(theId){
+            let newValue=this.state.list.filter(c=>c.id!=theId);
+            this.setState({list:newValue});
+        }
+
+         render(){
+             let courseComponentToBeDisplayed=this.state.list.map((course,index)=><CourseComponent coursedetails={course}  key={course.id} LinkToParentDeleteHandler={this.ParentDeleteHandler.bind(this)}/>)
+             return <ul>
+                        {courseComponentToBeDisplayed}
+                    </ul>
+         }
+     }
+     ReactDOM.render(<ListOfCourse/>,document.getElementById("content"));
+ </script>   
+</body>
+</html>
