@@ -1,5 +1,6 @@
 import * as react from 'react';
 import React from 'react';
+import UserThumbnailComponent from './userthumbnail.component';
 
 export default class Users extends react.Component{
 
@@ -10,20 +11,13 @@ export default class Users extends react.Component{
    
     render(){
         let datatoBeDisplayed = this.props.allUsers.map((userObject,index) =>
-        
-        <ul key={userObject.id}>
-            <li>
-                <span>{userObject.login}</span> &nbsp;
-                <span onClick={this.props.IncrementFollowers.bind(this,index)}>{userObject.followers}</span> &nbsp;
-            </li>
-        </ul>);
-
-        return <div>
-        <h1> Users Component !</h1>
-        <ul>
-             {datatoBeDisplayed}
-        </ul>
-        </div>
+        <UserThumbnailComponent key={userObject.id} {...this.props} userdetails={userObject} userindex={index}/>)
+        return <div className="container">   
+                    <h1> Users Component !</h1>
+                    <ul>
+                        {datatoBeDisplayed}
+                    </ul>
+                </div>
     }
     
 }
